@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .wrap {
+            height: 90vh;
+            background-image: url("https://picsum.photos/1200/300/?random=1");
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+
+        .header {
+            height: 100px;
+            background-color: rgb(255, 0, 0, .5);
+        }
+
+        .about {
+            min-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+        }
+
+        .about .item {
+            width: 370px;
+            margin: 0 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="header">
+            nav
+        </div>
+        <div class="about">
+            <div class="item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, repellat!</div>
+            <div class="item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, repellat!</div>
+            <div class="item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, repellat!</div>
+        </div>
+    </div>
+
+
+
+
+    <style>
+        .service .container {
+            min-width: 1200px;
+            margin: auto;
+            display: flex;
+        }
+
+        .service .main-img,
+        .service .list-group {
+            width: 1750px;
+            margin: 15px;
+        }
+
+        .service .main-img {
+            width: 100%;
+        }
+
+        .service .list-group:nth-child(2) {
+            order: -1;
+        }
+
+        .service .list-group .item {
+            display: flex;
+        }
+
+        .service .list-group .item .icon {
+            width: 25%;
+        }
+
+        .service .list-group .item .icon img {
+            width: 100%;
+        }
+
+        .service .list-group .item .txt {
+            width: 75%;
+            box-sizing: border-box;
+            padding-left: 10px;
+
+        }
+
+        .service .list-group:nth-child(2) .icon {
+            order: 1;
+        }
+    </style>
+
+    <div class="service">
+        <div class="container">
+            <div class="main-img">
+                <img src="https://picsum.photos/200/380/?random=1">
+            </div>
+            <div class="list-group">
+                <div class="item">
+                    <div class="icon">
+                        <img src="https://picsum.photos/60/60/?random=1">
+                    </div>
+                    <div class="txt">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci magnam esse perspiciatis
+                        tempora
+                        non, quibusdam assumenda consectetur provident deserunt, repellendus distinctio, voluptate sed
+                        ipsa
+                        autem! Quibusdam aperiam pariatur quasi quam?
+                    </div>
+                </div>
+            </div>
+            <div class="list-group">
+                <div class="item">
+                    <div class="icon">
+                        <img src="https://picsum.photos/60/60/?random=1">
+                    </div>
+                    <div class="txt">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci magnam esse perspiciatis
+                        tempora
+                        non, quibusdam assumenda consectetur provident deserunt, repellendus distinctio, voluptate sed
+                        ipsa
+                        autem! Quibusdam aperiam pariatur quasi quam?
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
