@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap {
+            width: 960px;
+            max-width: 960px;
+            border: 12px solid red;
+            display: flex;
+            flex-wrap: wrap;
+            margin: auto;
+        }
+
+        .item {
+            /*  物件寬度 / 父層寬度 * 100 */
+            width: 31.25%;
+            height: 200px;
+            background-color: #aaa;
+            margin: 10px 1.041666%;
+        }
+
+        @media screen and (max-width:767px) {
+            .item {
+                background-color: red;
+            }
+        }
+
+        @media screen and (min-width:768px) and (max-width:1023px) {
+            .item {
+                background-color: red;
+            }
+        }
+
+        /* @media screen and (min-width:1024px) {
+            .item {
+                background-color: green;
+            }
+        }
+
+        @media screen and (min-width:1280px) {
+            .item {
+                background-color: blue;
+            }
+        } */
+    </style>
+</head>
+
+<body>
+
+    <div class="wrap">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+</body>
+
+</html>

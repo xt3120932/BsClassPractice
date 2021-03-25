@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap {
+            max-width: 1200px;
+            border: 12px solid red;
+            display: flex;
+            flex-wrap: wrap;
+            margin: auto;
+        }
+
+        .item {
+            width: 16.666666%;
+            height: 200px;
+            margin: 1.25%;
+            background-color: #aaa;
+        }
+
+        @media screen and (max-width:767px) {
+            .item {
+                width: 100%;
+            }
+        }
+
+        @media screen and (min-width:768px) and (max-width:1023px) {
+            .item {
+                width: 47.5%;
+            }
+        }
+
+        @media screen and (min-width:1024px) and (max-width:1025px) {
+            .item {
+                width: 30.83333%;
+            }
+        }
+
+        @media screen and (min-width:1026px) {
+            .item {
+                width: 14.16666%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+</body>
+
+</html>

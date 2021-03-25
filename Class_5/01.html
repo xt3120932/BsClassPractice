@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .section {
+            width: 960px;
+            margin: auto;
+            padding: 50px 0;
+            border: 2px solid blue;
+        }
+
+        .title-group {
+            width: 320px;
+            position: relative;
+        }
+
+        .section:nth-child(even) .title-group {
+            margin-left: auto;
+        }
+
+        .title-group .title {
+            background-color: #f00;
+            color: #fff;
+            font-size: 50px;
+        }
+
+        .title-group .title-sg {
+            background-color: #000;
+            color: #fff;
+            position: absolute;
+            z-index: 1;
+        }
+
+        .pic-group {
+            width: 720px;
+            display: flex;
+            align-items: center;
+            margin-left: 16.666666%;
+            position: relative;
+        }
+
+        .section:nth-child(even) .pic-group {
+            margin-left: 8.333333%;
+        }
+
+        .pic-group .pic {
+            width: 98%;
+            margin-right: -6.33333%;
+        }
+
+        .pic-group .pic img {
+            display: block;
+            width: 100%;
+        }
+
+        .pic-group .btn {
+            width: 8.333333%;
+        }
+
+        .pic-group .btn img {
+            display: block;
+            width: 100%;
+        }
+
+        .pic-group .gray {
+            position: absolute;
+            background-color: #ddd;
+            width: 439px;
+            height: 290px;
+            top: -100px;
+            right: -80px;
+            z-index: -1;
+        }
+
+
+        .main-txt {
+            width: 640px;
+            background-color: #ddd;
+            margin-top: -2em;
+            position: relative;
+            z-index: 3;
+            padding: 10px;
+        }
+
+        .main-txt .sg {
+            display: flex;
+            align-items: center;
+        }
+
+        .main-txt .sg span:first-child {}
+
+        .main-txt .sg .line {
+            height: 4px;
+            background-color: red;
+            flex-grow: 1;
+            margin-left: 1em;
+        }
+
+        .main-txt p {
+            background-image: url("https://fakeimg.pl/4x4/f00");
+            background-repeat: no-repeat;
+            background-position: 0.4em 0.6em;
+            padding-left: 1em;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="section">
+        <!-- 主區一 -->
+        <div class="title-group">
+            <h2 class="title">
+                <span class="number">01</span>
+                <span class="title-txt">操控樂趣</span>
+            </h2>
+            <div class="title-sg">
+                <h3>人們滿意</h3>
+                <p>運行傳統為何一行傳統為何一點平靜福州權力
+                <p>運行傳統為何一行傳統為何一點平靜福州權力你知道規律並行傳統為何一點平靜福州權力你知道規律並
+                    你知道規律並行傳統為何一點平靜福州權力你知道規律並
+            </div>
+        </div>
+        <!-- 主區二 -->
+
+        <div class="pic-group">
+            <div class="pic">
+                <img src="https://picsum.photos/400/250/?random=1">
+            </div>
+            <div class="btn">
+                <img src="https://fakeimg.pl/80x40/f00">
+            </div>
+            <div class="gray"></div>
+        </div>
+        <!-- 主區三 -->
+        <div class="main-txt">
+            <div class="sg">
+                <span>因為我們做了這些革新</span>
+                <span class="line"></span>
+            </div>
+            <h3>低重心設計</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae consectetur autem ducimus maxime
+                sapiente
+                distinctio doloremque soluta quibusdam, reiciendis animi ipsam veritatis eius sint possimus!
+                Architecto
+                veritatis alias nulla natus.</p>
+            <h3>車體剛性強化</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae consectetur autem ducimus maxime
+                sapiente
+                distinctio doloremque soluta quibusdam, reiciendis animi ipsam veritatis eius sint possimus!
+                Architecto
+                veritatis alias nulla natus.</p>
+            <h3>四輪獨立懸吊</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae consectetur autem ducimus maxime
+                sapiente
+                distinctio doloremque soluta quibusdam, reiciendis animi ipsam veritatis eius sint possimus!
+                Architecto
+                veritatis alias nulla natus.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <!-- 主區一 -->
+        <div class="title-group">
+            <h2 class="title">
+                <span class="number">02</span>
+                <span class="title-txt">操控樂趣</span>
+            </h2>
+            <div class="title-sg">
+                <h3>人們滿意</h3>
+                <p>運行傳統為何一行傳統為何一點平靜福州權力
+                <p>運行傳統為何一行傳統為何一點平靜福州權力你知道規律並行傳統為何一點平靜福州權力你知道規律並
+                    你知道規律並行傳統為何一點平靜福州權力你知道規律並
+            </div>
+        </div>
+        <!-- 主區二 -->
+
+        <div class="pic-group">
+            <div class="pic">
+                <img src="https://picsum.photos/400/250/?random=2">
+            </div>
+            <div class="btn">
+                <img src="https://fakeimg.pl/80x40/f00">
+            </div>
+            <div class="gray"></div>
+        </div>
+        <!-- 主區三 -->
+        <div class="main-txt">
+            <div class="sg">
+                因為我們做了這些革新
+            </div>
+            <h3>低重心設計</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae consectetur autem ducimus maxime
+                sapiente
+                distinctio doloremque soluta quibusdam, reiciendis animi ipsam veritatis eius sint possimus!
+                Architecto
+                veritatis alias nulla natus.</p>
+            <h3>車體剛性強化</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae consectetur autem ducimus maxime
+                sapiente
+                distinctio doloremque soluta quibusdam, reiciendis animi ipsam veritatis eius sint possimus!
+                Architecto
+                veritatis alias nulla natus.</p>
+            <h3>四輪獨立懸吊</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae consectetur autem ducimus maxime
+                sapiente
+                distinctio doloremque soluta quibusdam, reiciendis animi ipsam veritatis eius sint possimus!
+                Architecto
+                veritatis alias nulla natus.</p>
+        </div>
+    </section>
+    <section class="section">
+        <!-- 主區一 -->
+        <div class="title-group">
+            <h2 class="title">
+                <span class="number">03</span>
+                <span class="title-txt">操控樂趣</span>
+            </h2>
+            <div class="title-sg">
+                <h3>人們滿意</h3>
+                <p>運行傳統為何一行傳統為何一點平靜福州權力
+                <p>運行傳統為何一行傳統為何一點平靜福州權力你知道規律並行傳統為何一點平靜福州權力你知道規律並
+                    你知道規律並行傳統為何一點平靜福州權力你知道規律並
+            </div>
+        </div>
+        <!-- 主區二 -->
+
+        <div class="pic-group">
+            <div class="pic">
+                <img src="https://picsum.photos/400/250/?random=3">
+            </div>
+            <div class="btn">
+                <img src="https://fakeimg.pl/80x40/f00">
+            </div>
+            <div class="gray"></div>
+        </div>
+        <!-- 主區三 -->
+        <div class="main-txt">
+            <div class="sg">
+                因為我們做了這些革新
+            </div>
+            <h3>低重心設計</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae consectetur autem ducimus maxime
+                sapiente
+                distinctio doloremque soluta quibusdam, reiciendis animi ipsam veritatis eius sint possimus!
+                Architecto
+                veritatis alias nulla natus.</p>
+            <h3>車體剛性強化</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae consectetur autem ducimus maxime
+                sapiente
+                distinctio doloremque soluta quibusdam, reiciendis animi ipsam veritatis eius sint possimus!
+                Architecto
+                veritatis alias nulla natus.</p>
+            <h3>四輪獨立懸吊</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae consectetur autem ducimus maxime
+                sapiente
+                distinctio doloremque soluta quibusdam, reiciendis animi ipsam veritatis eius sint possimus!
+                Architecto
+                veritatis alias nulla natus.</p>
+        </div>
+    </section>
+    <section class="section">
+        <!-- 主區一 -->
+        <div class="title-group">
+            <h2 class="title">
+                <span class="number">04</span>
+                <span class="title-txt">操控樂趣</span>
+            </h2>
+            <div class="title-sg">
+                <h3>人們滿意</h3>
+                <p>運行傳統為何一行傳統為何一點平靜福州權力
+                <p>運行傳統為何一行傳統為何一點平靜福州權力你知道規律並行傳統為何一點平靜福州權力你知道規律並
+                    你知道規律並行傳統為何一點平靜福州權力你知道規律並
+            </div>
+        </div>
+        <!-- 主區二 -->
+
+        <div class="pic-group">
+            <div class="pic">
+                <img src="https://picsum.photos/400/250/?random=4">
+            </div>
+            <div class="btn">
+                <img src="https://fakeimg.pl/80x40/f00">
+            </div>
+            <div class="gray"></div>
+        </div>
+        <!-- 主區三 -->
+        <div class="main-txt">
+            <div class="sg">
+                因為我們做了這些革新
+            </div>
+            <h3>低重心設計</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae consectetur autem ducimus maxime
+                sapiente
+                distinctio doloremque soluta quibusdam, reiciendis animi ipsam veritatis eius sint possimus!
+                Architecto
+                veritatis alias nulla natus.</p>
+            <h3>車體剛性強化</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae consectetur autem ducimus maxime
+                sapiente
+                distinctio doloremque soluta quibusdam, reiciendis animi ipsam veritatis eius sint possimus!
+                Architecto
+                veritatis alias nulla natus.</p>
+            <h3>四輪獨立懸吊</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae consectetur autem ducimus maxime
+                sapiente
+                distinctio doloremque soluta quibusdam, reiciendis animi ipsam veritatis eius sint possimus!
+                Architecto
+                veritatis alias nulla natus.</p>
+        </div>
+    </section>
+    <section class="section">
+        <!-- 主區一 -->
+        <div class="title-group">
+            <h2 class="title">
+                <span class="number">05</span>
+                <span class="title-txt">操控樂趣</span>
+            </h2>
+            <div class="title-sg">
+                <h3>人們滿意</h3>
+                <p>運行傳統為何一行傳統為何一點平靜福州權力
+                <p>運行傳統為何一行傳統為何一點平靜福州權力你知道規律並行傳統為何一點平靜福州權力你知道規律並
+                    你知道規律並行傳統為何一點平靜福州權力你知道規律並
+            </div>
+        </div>
+        <!-- 主區二 -->
+
+        <div class="pic-group">
+            <div class="pic">
+                <img src="https://picsum.photos/400/250/?random=5">
+            </div>
+            <div class="btn">
+                <img src="https://fakeimg.pl/80x40/f00">
+            </div>
+            <div class="gray"></div>
+        </div>
+        <!-- 主區三 -->
+        <div class="main-txt">
+            <div class="sg">
+                因為我們做了這些革新
+            </div>
+            <h3>低重心設計</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae consectetur autem ducimus maxime
+                sapiente
+                distinctio doloremque soluta quibusdam, reiciendis animi ipsam veritatis eius sint possimus!
+                Architecto
+                veritatis alias nulla natus.</p>
+            <h3>車體剛性強化</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae consectetur autem ducimus maxime
+                sapiente
+                distinctio doloremque soluta quibusdam, reiciendis animi ipsam veritatis eius sint possimus!
+                Architecto
+                veritatis alias nulla natus.</p>
+            <h3>四輪獨立懸吊</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae consectetur autem ducimus maxime
+                sapiente
+                distinctio doloremque soluta quibusdam, reiciendis animi ipsam veritatis eius sint possimus!
+                Architecto
+                veritatis alias nulla natus.</p>
+        </div>
+    </section>
+</body>
+
+</html>
