@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        nav {
+            background-color: #ccc;
+        }
+
+        @media screen and (max-width:767px) {
+
+            nav .btn-sub-control {
+                width: 40px;
+            }
+
+            nav a {
+                flex-grow: 1;
+            }
+
+            nav li {
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            nav>ul {}
+
+            nav>ul ul {
+                width: 100%;
+                background-color: lightblue;
+                display: none;
+            }
+
+            nav ul .show {
+                display: block;
+            }
+
+            /* nav>ul li:hover ul {
+                display: block;
+            } */
+
+            nav a {
+                text-decoration: none;
+                font-size: 20px;
+                padding: 10px 20px;
+                display: block;
+            }
+
+            nav a:hover {
+                background-color: pink;
+            }
+        }
+
+        @media screen and (min-width:768px) {
+            nav .btn-sub-control {
+                display: none;
+            }
+
+            nav>ul {
+                display: flex;
+            }
+
+            nav>ul ul {
+                position: absolute;
+                display: none;
+            }
+
+            nav>ul li:hover ul {
+                display: block;
+            }
+
+            nav a {
+                text-decoration: none;
+                font-size: 20px;
+                padding: 10px 20px;
+                display: block;
+            }
+
+            nav a:hover {
+                background-color: pink;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li>
+                <a href="#">link</a>
+            </li>
+            <li>
+                <a href="#">link</a>
+                <button class="btn-sub-control">▶</button>
+                <ul>
+                    <li><a href="#">sub link</a></li>
+                    <li><a href="#">sub link</a></li>
+                    <li><a href="#">sub link</a></li>
+                    <li><a href="#">sub link</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">link</a>
+            </li>
+            <li>
+                <a href="#">link</a>
+                <ul>
+                    <li><a href="#">sub link</a></li>
+                    <li><a href="#">sub link</a></li>
+                    <li><a href="#">sub link</a></li>
+                    <li><a href="#">sub link</a></li>
+                    <li><a href="#">sub link</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">link</a>
+            </li>
+        </ul>
+    </nav>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        // $(function () {
+        //     $("nav .btn-sub-control").click(function () {
+        //         $(this).next().toggle();
+        //     })
+        // })
+
+        $(function () {
+            $("nav .btn-sub-control").click(function () {
+                $(this).siblings("ul").toggleClass("show");
+            })
+        })
+    </script>
+</body>
+
+</html>
