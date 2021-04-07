@@ -43,19 +43,19 @@
 
     <script>
         let Reservoir = [{
-            name: "新山水庫(基隆)", Capacity: "896.58", Percent: "89.4%", Days: "99天"
+            name: "新山水庫(基隆)", Capacity: "896.58 萬立方公尺", Percent: "89.4%", Days: "99天"
         },
         {
-            name: "翡翠水庫(台北、新北)", Capacity: "26438.64", Percent: "78.8%", Days: "60天以上"
+            name: "翡翠水庫(台北、新北)", Capacity: "26438.64 萬立方公尺", Percent: "78.8%", Days: "60天以上"
         },
         {
-            name: "石門水庫(新北、桃園、新竹)", Capacity: "6795.68", Percent: "34.4%", Days: "60天以上"
+            name: "石門水庫(新北、桃園、新竹)", Capacity: "6795.68 萬立方公尺", Percent: "34.4%", Days: "60天以上"
         },
         {
-            name: "永和山水庫(新竹、苗栗)", Capacity: "242.59", Percent: "8.1%", Days: "30天-60天"
+            name: "永和山水庫(新竹、苗栗)", Capacity: "242.59 萬立方公尺", Percent: "8.1%", Days: "30天-60天"
         },
         {
-            name: "寶山水庫(新竹)", Capacity: "94.18", Percent: "18.7%", Days: "60天以上"
+            name: "寶山水庫(新竹)", Capacity: "94.18 萬立方公尺", Percent: "18.7%", Days: "60天以上"
         }];
         let thead, tbody;
 
@@ -87,6 +87,21 @@
 
             //tbody
             Reservoir.forEach((item, index) => {
+                let source = Object.keys(item);
+
+                let tr = document.createElement("tr");
+
+                let td = document.createElement("td");
+                td.innerText = index + 1;
+
+                tr.appendChild(td);
+                tbody.appendChild(tr);
+
+                source.forEach((key, index) => {
+                    let td = document.createElement("td");
+                    td.innerText = item[key];
+                    tr.appendChild(td);
+                });
 
             });
         }
