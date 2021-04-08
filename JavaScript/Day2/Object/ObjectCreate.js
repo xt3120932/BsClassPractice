@@ -2,10 +2,15 @@ var person = {
     name: "Kevin",
     age: 32,
     height: 175,
-    weight: 64
+    weight: 64,
+    bmi: function () {
+        //object literal語法需要⽤this才能存取到本⾝屬性
+        return this.weight / ((this.height / 100) ** 2);
+    }
 };
 
 console.log(person);
+console.log(person.bmi());
 console.log(person.name);
 console.log(person.age);
 console.log(person.height);
@@ -72,3 +77,24 @@ people.forEach((person, index) => {
 
     console.log(msg);
 });
+
+console.log("=".repeat(60));
+
+//Json
+var person = {
+    name: "Kevin",
+    age: 32,
+    height: 175,
+    weight: 64
+};
+console.log(person);
+console.log("The Object is " + person);
+console.log("This Object is %o", person);
+console.log("This Object is :" + JSON.stringify(person));
+
+var jsonText = JSON.stringify(person);
+console.log(typeof jsonText);
+
+var p = JSON.parse(jsonText);
+console.log(p);
+console.log(typeof p);

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        let h1 = document.createElement('h1');
+        h1.innerHTML = "DOM";
+        document.body.appendChild(h1);
+
+        let div = document.createElement('div');
+
+        let p1 = document.createElement('p');
+        p1.innerHTML = "window";
+        let p2 = document.createElement('p');
+        p2.innerHTML = "document";
+        let p3 = document.createElement('p');
+        p3.innerHTML = "html";
+
+
+        div.appendChild(p1);
+        div.appendChild(p2);
+        div.appendChild(p3);
+        document.body.appendChild(div);
+
+
+        // ==== ex1 動態創建元素
+        // let ul = document.createElement('ul');
+        // let li1 = document.createElement('li');
+        // li1.innerHTML = "Node";
+        // let li2 = document.createElement('li');
+        // li2.innerHTML = "NodeList";
+        // let li3 = document.createElement('li');
+        // li3.innerHTML = "HTMLCollection";
+        // ul.appendChild(li1);
+        // ul.appendChild(li2);
+        // ul.appendChild(li3);
+        // document.body.appendChild(ul);
+
+        // ==== ex2 動態創建元素
+        // let ul = document.createElement('ul');
+        // let lis = ["Node", "NodeList", "HTMLCollection"];
+        // lis.forEach((item, index) => {
+        //     let li = document.createElement("li");
+        //     li.innerText = item;
+        //     ul.appendChild(li);
+        // });
+        // document.body.appendChild(ul);
+
+        let lis = ["Node", "NodeList", "HTMLCollection"];
+        let ul = genUL(lis);
+        document.body.appendChild(ul);
+
+        function genUL(liArray) {
+            let ul = document.createElement("ul");
+
+            liArray.forEach((item, index) => {
+                let li = document.createElement("li");
+                li.innerText = item;
+                ul.appendChild(li);
+            });
+            return ul;
+
+        }
+    </script>
+</body>
+
+</html>

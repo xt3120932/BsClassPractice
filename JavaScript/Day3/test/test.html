@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1></h1>
+    <p></p>
+    <div></div>
+    <script type="module">
+        import { $g, genUL } from '../modules/helpers.js';
+
+        let h1 = $g('h1');
+        h1.innerText = "hello world";
+
+        $g('p').innerText = "dom";
+        $g('div').innerText = "css";
+
+        let lis = ["Node", "NodeList", "HTMLCollection"];
+        let ul = genUL(lis);
+        document.body.appendChild(ul);
+    </script>
+</body>
+
+</html>
