@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        .box {
+            display: flex;
+
+        }
+
+        .box div {
+            width: 150px;
+            height: 150px;
+            background-color: #ccc;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div id="div_1"></div>
+        <div class="div_2"></div>
+        <div id="div_1 div_2"></div>
+        <div></div>
+    </div>
+
+    <h1 id="h1"></h1>
+    <h1 id="h1_2"></h1>
+
+    <input id="input" type="text">
+
+    <button id="btn">click</button>
+
+    <br>
+    <img id="img" src="" alt="">
+    <input id="pwd-input" type="text">
+
+    <script>
+        //selector
+        //by id
+        let div_1 = document.getElementById("div_1");
+        console.log(div_1);
+
+        //by class
+        let div_2 = document.getElementsByClassName("div_2")[0];
+        console.log(div_2);
+
+        //by tag
+        let div_3 = document.getElementsByTagName("div");
+        console.log(div_3);
+
+        //by css selector
+        let div_4 = document.querySelector('body > div');
+        console.log(div_4);
+
+        //by css selector return all
+        let div_5 = document.querySelectorAll('.div_2');
+        console.log(div_5);
+
+        //innertext
+        let h1 = document.getElementById("h1");
+        h1.innerText = "Hello world Text"
+
+        //innerHTML
+        let h1_2 = document.getElementById("h1_2");
+        h1_2.innerHTML = "Hello world HTML<input type = 'text'>"
+
+        let input = document.getElementById("input");
+        input.value = "0";
+
+
+        h1.style.color = "#ff0000"
+
+        let btn = document.getElementById("btn");
+        btn.classList.add('btn', 'btn-primary')
+
+        btn.onclick = function () {
+            setTimeout(() => {
+                btn.classList.replace('btn-danger', 'btn-primary');
+            }, 300);
+            setTimeout(() => {
+                btn.classList.replace('btn-primary', 'btn-danger');
+            }, 600);
+            setTimeout(() => {
+                btn.classList.replace('btn-danger', 'btn-primary');
+            }, 900);
+            setTimeout(() => {
+                btn.classList.replace('btn-primary', 'btn-danger');
+            }, 1200);
+            setTimeout(() => {
+                btn.classList.replace('btn-danger', 'btn-primary');
+            }, 1500);
+
+        }
+
+        let img = document.getElementById("img");
+        img.setAttribute('src', 'https://picsum.photos/200/200/?random=1');
+        let pwd_input = document.getElementById("pwd-input");
+        pwd_input.setAttribute('type', 'password')
+
+        btn.setAttribute('custom', `{'Name':'洗手乳','Price' : 100}`);
+        btn.onclick = function () {
+            let obj = JSON.parse(JSON.stringify(btn.getAttribute('custom').value));
+            h1.innerText = `名稱 ${obj['Name']}, ${obj['Price']}`;
+        }
+    </script>
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
