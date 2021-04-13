@@ -13,7 +13,7 @@
     <p></p>
     <div></div>
     <script type="module">
-        import { $g, genUL } from '../modules/helpers.js';
+        import { $g, genUL, getRandom } from '../modules/helpers.js';
 
         let h1 = $g('h1');
         h1.innerText = "hello world";
@@ -24,6 +24,9 @@
         let lis = ["Node", "NodeList", "HTMLCollection"];
         let ul = genUL(lis);
         document.body.appendChild(ul);
+
+
+        document.querySelector('body>div').innerHTML = getRandom(1, 100);
     </script>
 </body>
 

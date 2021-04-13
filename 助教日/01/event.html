@@ -53,16 +53,16 @@
 
         l1.onclick = function () {
             alert('按了L1');
+            event.stopPropagation();
         }
         l2.onclick = function () {
             alert('按了L2');
+            event.stopPropagation();
         }
         l3.onclick = function () {
             alert('按了L3');
+            event.stopPropagation();
         }
-
-
-
 
         let btn1 = document.getElementById("btn1");
         let btn2 = document.getElementById("btn2");

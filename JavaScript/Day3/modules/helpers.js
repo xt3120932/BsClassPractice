@@ -18,14 +18,14 @@ function genUL(liArray) {
         ul.appendChild(li);
     });
     return ul;
+}
 
+function getRandom(min, max) {
+    return Math.floor(Math.random() * max + min);
 }
 
 export {
     $g,
-    // displayName,
-    // $title,
-    // $ex,
-    // $log,
-    genUL
+    genUL,
+    getRandom
 };
