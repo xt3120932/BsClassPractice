@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>用XMLHttpRequest請求GitHub JSON資料</h1>
+
+    <button id='button1'>Request JSON1</button>
+    <button id='button2'>Request JSON2</button>
+    <button id='button3'>Request JSON3</button>
+    <button id='button4'>Request JSON4</button>
+    <button id='button5'>Show</button>
+    <button id='btnClear'>Clear</button>
+    <div id='msg'></div>
+
+    <ul id="person">
+
+    </ul>
+
+    <script type="module">
+        import { $g } from "../../Day3/modules/helpers.js"
+
+        let msg = $g('#msg');
+
+        $g('button').forEach((item) => {
+            item.addEventListener('click', () => { msg.innerText = ''; })
+        });
+
+        let btn1 = $g('#button1').addEventListener('click', requestJSON1);
+        let btn2 = $g('#button2').addEventListener('click', requestJSON2);
+        let btn3 = $g('#button3').addEventListener('click', requestJSON3);
+        let btn4 = $g('#button4').addEventListener('click', requestJSON4);
+        let btn5 = $g('#button5').addEventListener('click', requestJSON5);
+        $g('#btnClear').addEventListener('click', () => { msg.innerText = ''; })
+
+
+        // const url = 'https://raw.githubusercontent.com/apprunner/FileStorage/master/iPad_DataFixed.json';
+        const url = 'https://raw.githubusercontent.com/xt3120932/FileStorage/main/Json_Array.json';
+        // // const url = 'http://127.0.0.1:5503/XMLHttpRequest/iPad_DataFixed.json';
+
+        let xhr = new XMLHttpRequest();
+
+        //Ex1
+        function requestJSON1() {
+            xhr.onload = function () {
+                msg.innerText = this.responseText;
+                // console.log(this);
+            }
+            xhr.open('GET', url);
+            xhr.send();
+        }
+
+        //Ex2
+        function requestJSON2() {
+            xhr.onload = responsHandler;
+            xhr.open('GET', url);
+            xhr.send();
+        }
+
+        function responsHandler() {
+            msg.innerText = this.responseText;
+        }
+
+        //Ex3
+        function requestJSON3() {
+            xhr.addEventListener('load', responsHandler);
+            xhr.open('GET', url);
+            xhr.send();
+        }
+
+        //Ex4
+        function requestJSON4() {
+            xhr.onreadystatechange = () => {
+                msg.innerText = xhr.responseText;
+            };
+            xhr.open('GET', url);
+            xhr.send();
+        }
+
+        // Ex5
+        let array = [];
+        let ul = document.getElementById("person");
+
+        function requestJSON5() {
+            xhr.onload = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    array = JSON.parse(this.responseText);
+
+                    array.forEach((person, index) => {
+                        let li = document.createElement("li");
+                        li.innerText = `${person.firstname},${person.email},${person.height},${person.city.通訊地址},${person.phone.行動電話},${person.cars}`;
+                        ul.appendChild(li);
+                    });
+
+                } else {
+                    msg.textContent = '發⽣錯誤，HTTP response代碼：' + xhr.status;
+                }
+            }
+            xhr.open('GET', url);
+            xhr.send();
+        }
+    </script>
+</body>
+
+</html>
