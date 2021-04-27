@@ -24,8 +24,17 @@ function getRandom(min, max) {
     return Math.floor(Math.random() * max + min);
 }
 
+function $c(element, text) {
+    let el = document.createElement(element);
+    if (text != null && text != undefined && text.length > 0) {
+        el.innerText = text;
+    }
+    return el;
+}
+
 export {
     $g,
+    $c,
     genUL,
     getRandom
 };

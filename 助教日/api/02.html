@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Simple Map</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <style type="text/css">
+        /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+        #map {
+            height: 100%;
+        }
+
+        /* Optional: Makes the sample page fill the window. */
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+    </style>
+    <script>
+        let map;
+        const CHU = { lat: 24.760003792397566, lng: 120.95293585317759 };
+        const url1 = 'https://raw.githubusercontent.com/taihochan/JsonData/main/%E5%8F%B0%E7%81%A3%E8%A1%8C%E6%94%BF%E5%9C%B0%E5%8D%80.json';
+        const url2 = 'https://raw.githubusercontent.com/taihochan/JsonData/main/%E5%8F%B0%E7%81%A3%E8%87%AA%E4%BE%86%E6%B0%B4%E7%94%A8%E9%87%8F.json';
+
+        let xhr = new XMLHttpRequest();
+        let array = [];
+
+        function initMap() {
+            map = new google.maps.Map(document.getElementById("map"), {
+                center: CHU,
+                zoom: 8,
+            });
+
+            var marker = new google.maps.Marker({
+                map: map,
+                position: position
+            });
+
+            xhr.onload = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    array = JSON.parse(this.responseText);
+
+                    array.forEach((item, index) => {
+                        let pos = { lat: item.Lat, lng: item.Lng };
+
+                        new google.maps.Marker({
+                            position: pos,
+                            map,
+                            title: item.City + item.District,
+                            animation: google.maps.Animation.DROP
+                        });
+                    });
+
+                } else {
+                    msg.textContent = '發⽣錯誤，HTTP response代碼：' + xhr.status;
+                }
+            }
+            xhr.open('GET', url1);
+            xhr.send();
+
+
+        }
+    </script>
+</head>
+
+<body>
+    <div id="map"></div>
+    <button type="button" class="btn btn-outline-secondary" v-for="f in features"
+        @click="openInfoWindows(f.properties.id)">
+        {{ f.properties.name }}
+    </button>
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCE82QI_63-Qt_ZEr1Vv2HdEb1NwlpshRU&callback=initMap&libraries=&v=weekly"
+        async></script>
+</body>
+
+</html>

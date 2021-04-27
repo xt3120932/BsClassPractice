@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Simple Map</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <style type="text/css">
+        /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+        #map {
+            height: 100%;
+        }
+
+        /* Optional: Makes the sample page fill the window. */
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+    </style>
+    <script>
+        var map;
+        var position = {
+            lat: 25.0336962,
+            lng: 121.5643673
+        };
+        var a = 1;
+        var contentString = '<h1>大家好我是資訊視窗</h1><button id="btn">點我</button>';
+
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 17,
+                center: position
+            });
+            var marker = new google.maps.Marker({
+                map: map,
+                position: position
+            });
+            var infowindow = new google.maps.InfoWindow({
+                content: contentString,
+                position: position
+            });
+            infowindow.open(map, marker);
+            infowindow.addListener('domready', function () {
+                var btn = document.getElementById('btn');
+                btn.addEventListener('click', function () {
+                    a = a * -1;
+                    if (a > 0) {
+                        infowindow.setContent('<h1>嘿嘿</h1><button id="btn">點我</button>');
+                    } else {
+                        infowindow.setContent('<h1>哈哈</h1><button id="btn">點我</button>');
+                    }
+                });
+            });
+            marker.addListener('click', function () {
+                infowindow.open(map, marker);
+            });
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <div id="map"></div>
+
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCE82QI_63-Qt_ZEr1Vv2HdEb1NwlpshRU&callback=initMap&libraries=&v=weekly"
+        async></script>
+</body>
+
+</html>

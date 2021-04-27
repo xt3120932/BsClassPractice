@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Simple Map</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <style type="text/css">
+        /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+        #map {
+            height: 100%;
+        }
+
+        /* Optional: Makes the sample page fill the window. */
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+    </style>
+    <script>
+        let map;
+        const CHU = { lat: 24.760003792397566, lng: 120.95293585317759 };
+        let source = [
+            { lat: 24.760003792397566, lng: 120.95293585317759 },
+            { lat: 24.75280978213977, lng: 120.94976782251607 },
+            { lat: 24.763916418285994, lng: 120.94032644693529 }
+        ]
+        function initMap() {
+            map = new google.maps.Map(document.getElementById("map"), {
+                center: CHU,
+                zoom: 15,
+            });
+
+            new google.maps.Marker({
+                position: CHU,
+                map,
+                title: "Hello World!",
+            });
+
+
+            source.forEach((item, index) => {
+                new google.maps.Marker({
+                    position: item,
+                    map,
+                    title: "Hello World!",
+                    animation: google.maps.Animation.DROP
+                });
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <div id="map"></div>
+
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCE82QI_63-Qt_ZEr1Vv2HdEb1NwlpshRU&callback=initMap&libraries=&v=weekly"
+        async></script>
+</body>
+
+</html>

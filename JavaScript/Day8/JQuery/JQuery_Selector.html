@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>js .innerHTML</button>
+    <button>jQuery .html()</button>
+    <div id="Msg"></div>
+    <div id="jqMsg"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script type="module">
+        import { $g } from "../../Day3/modules/helpers.js";
+
+        //原生 Js
+        document.getElementById("Msg").addEventListener('click', function () {
+            document.getElementById("Msg").innerHTML = '<h1>Pure JavaScript</h1>';
+        });
+
+        //自訂模組
+        $g('button:first-child').addEventListener('click', function () {
+            $g("#Msg").innerHTML = '<h1>JavaScript Module</h1>';
+        })
+
+        //jQuery
+        $('button').last().click(function () {
+            $('#jqMsg').html("<h1>This is jQuery</h1>");
+        });
+
+    </script>
+</body>
+
+</html>
